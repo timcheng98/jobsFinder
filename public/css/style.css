@@ -1,0 +1,135 @@
+
+
+.job-item {
+  background: white;
+  padding: 1rem 0 0.5rem 1rem;
+  margin: 0 0 0.5rem  ;
+}
+
+.job-item-content {
+  background: white;
+}
+
+.job-item-content-1 {
+  margin: 1rem 0rem 3.5rem 1rem;
+}
+
+.job-item-content-2 {
+  display: flex;
+  background: rgba(161, 160, 160, 0.4);
+  justify-content: auto;
+  align-items: auto;
+  text-align: center;
+}
+
+.job-item-content-2 span {
+  margin: 1.5rem;
+}
+
+.job-item-content-3 {
+  margin-top: 1.5rem;
+  padding: 1rem;
+}
+
+.job-item-content-3 p {
+  font-size:1.2rem;
+}
+
+.job-item-content-4 {
+  margin-top: 1.5rem;
+  padding: 1rem;
+
+}
+
+.category-grid {
+  width: 100%;
+  height: auto;
+  display: none;
+  grid-gap: 5px;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-rows: minmax(220px, auto);
+}
+
+.show {
+  display: grid;
+}
+
+
+.category-grid-item {
+  background: no-repeat center/cover ;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height: 14rem;
+  font-size: 2rem;
+  font-weight: 700;
+  box-shadow: inset 20px 20px 150px #000000, inset -20px -20px 150px #000000;
+}
+
+
+
+
+.category-grid-item span {
+  outline: 5px solid white;
+  vertical-align: middle;
+  padding: 1rem;
+ 
+}
+
+.category-grid-item span a{
+ color: white;
+ 
+}
+
+.grid-item-6 {
+  grid-column: 1 / 3;
+  grid-row: 2 / 2;
+}
+
+.category-grid-item.grid-item-3 {
+  grid-column: 3 / 4;
+  grid-row: 1 / 3;
+  line-height: 30rem;
+}
+
+.grid-item-4 {
+  grid-column: 4 / 6;
+  grid-row: 1 / 2;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 38rem;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  background-color:rgba(255, 255, 255, 0.6);
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color:rgba(255, 255, 255, 0.9);
+}
+
+.result {
+  font-size:14px;
+}
+.result:hover{
+  background-color: lightskyblue;
+}
+

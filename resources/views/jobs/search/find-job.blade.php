@@ -54,7 +54,7 @@
         </div>
         <div id="details" class="col-6 col-md-6 col-sm-8 card"  style="padding-bottom: auto;padding-left:10px;">
           <div id="details-bg-bg" class=""></div>
-          <div id="details-description" class=""></div>
+          <div id="details-description" class="description-content"></div>
           <div id="details-contact" class=""></div>
         </div>
       </div>

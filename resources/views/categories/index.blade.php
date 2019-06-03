@@ -3,7 +3,7 @@
 @section('content')
 <div class="container col-md-11">
     <br>
-        <div class="col-md-11 col-sm-11">
+        <div class="col-md-11 col-sm-12 category-item category-name">
           <h1 class="font-weight-bold">Job Category</h1><hr>       
             @foreach ($categories as $category)       
               <a href="search/findjob/<?php echo preg_replace('/(\s+)|(\/+)/','',$category->name); ?>/{{ $category->id}}">

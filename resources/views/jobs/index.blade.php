@@ -3,11 +3,11 @@
 @section('content')
 
 
-    <div class="col-10 col-sm-10 col-md-12  text-center bg-secondary " 
+  <div class="col-10 col-sm-10 col-md-12  text-center bg-secondary " 
 style="padding-top:10%;padding-bottom:10%;background-image:url({{ asset('storage/index-bg-3.jpg')}});background-size:cover;">
     
 @include('include.index-navbar')
-      <h1 class="text-dark font-weight-bold w3-animate-opacity" style="font-size:70px;">Find your Job</h1>
+      <h1 class="text-dark font-weight-bold w3-animate-opacity text-md" style="">Find your Job</h1>
       <br><br> 
       {!! Form::open(array('action' => 'JobsController@search','method' => 'POST', 'class' => 'w3-animate-opacity')) !!}
       <div class="row" style="margin-left:20%">   
@@ -45,12 +45,12 @@ style="padding-top:10%;padding-bottom:10%;background-image:url({{ asset('storage
     
     </div>
     <br>
-    <div class="container col-md-11">
+    <div class="container col-md-11 category-item">
         <div class="col-md-11 col-sm-11">
           <h1 class="font-weight-bold">Job Category</h1><hr>       
             @foreach ($categories as $category)       
               <a href="search/findjob/<?php echo preg_replace('/(\s+)|(\/+)/','',$category->name); ?>/{{ $category->id}}">
-                <h5 class="text-white btn btn-info btn-lg " style="margin:0.8rem;padding:1rem">
+                <h5 class="text-white btn btn-info btn-lg index-category-name" style="">
                   {{$category->name}} 
                 </h5>
               </a>

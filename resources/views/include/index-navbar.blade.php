@@ -1,12 +1,15 @@
 
-<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 fixed-top  " >
-    <h5 class="my-0 font-weight-bold" style="margin:0 0 0 20rem;font-size:1.7rem"><strong><a href="/">{{config('app.name', 'JobsFinder')}}</a></strong></h5>
-    <nav class="col-md-4 col-sm-8">
-      <a class="col-md-2 col-sm-4 text-dark" style="font-size:1.3rem" href="/category">Categories</a>
-      <a class="col-md-2 col-sm-4 text-dark"  style="font-size:1.3rem"href="#">about</a>
-      <a class="col-md-4 col-sm-4 text-dark" style="font-size:1.3rem" href="#">Useful links</a>
+    
+<link href="{{ asset('css/style.css') }}" rel="stylesheet">
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 index-navbar col-10" style="top:0;left:0;position: absolute">
+   
+    <h5 class="col-sm-2 my-0 font-weight-bold " style="margin:0 0 0 20rem;font-size:1.5rem" class=""><strong><a href="/">{{config('app.name', 'JobsFinder')}}</a></strong></h5>
+    <nav class="col-md-4 col-sm-8 index-nav-item">
+      <a class="col-md-2 col-sm-4 text-dark text-font"  href="/category">Categories</a>
+      <a class="col-md-2 col-sm-4 text-dark text-font" href="#">about</a>
+      <a class="col-md-4 col-sm-4 text-dark text-font"  href="#">Useful links</a>
       @auth
-      <a class="col-md-4 col-sm-4 text-dark" style=";font-size:1.3rem" href="/job/create">Create</a>
+      <a class="col-md-4 col-sm-4 text-dark text-font"  href="/job/create">Create</a>
       @endauth
     
   
@@ -17,13 +20,13 @@
           <span class="navbar-toggler-icon"></span>
       </button>
           @guest
-              <a class="nav-link btn btn-outline-info text-dark font-weight-bold" href="{{ route('login') }}" style="font-size:1rem;margin-left:45rem">Employer</a>
+              <a class="nav-link btn btn-outline-info text-dark font-weight-bold login-bar text-sm" href="{{ route('login') }}" style="font-size:1rem;">Employer</a>
           @if (Route::has('register'))
-            <a class="nav-link btn btn-outline-info text-dark font-weight-bold" href="{{ route('register') }}" style="font-size:1rem;margin-left:1rem">{{ __('Register') }}</a> 
+            <a class="nav-link btn btn-outline-info text-dark font-weight-bold " href="{{ route('register') }}" style="font-size:1rem;margin-left:1rem">{{ __('Register') }}</a> 
           @endif
           @else
             
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle text-dark btn btn-lg btn-outline-info " style="font-size:1.5rem;margin-left:50rem" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle text-dark btn btn-lg btn-outline-info login-bar text-sm " style="" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
         
@@ -41,5 +44,4 @@
       
           @endguest
   </div>
-  
   

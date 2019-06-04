@@ -176,6 +176,15 @@
   font-size : 1.3rem;
 }
 
+.salary-output {
+  font-size: 1.5rem;
+}
+
+.salary-output-1 {
+  font-size: 1.5rem;
+  margin-right: 2rem;
+}
+
 
 @media (max-width:1650px) {
   .job-items {

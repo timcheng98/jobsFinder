@@ -71,9 +71,10 @@
   $(window).scroll(function(event){
     console.log(lastScrollTop)
    var st = $(this).scrollTop();
-   if (st > lastScrollTop && st >= 110){
+   if (st > lastScrollTop || st >= 116){
        // downscroll code
-       $('#search-bar').addClass('fixed-top')
+       $('#search-bar').addClass('fixed-top');
+    
    } else {
       // upscroll code
       $('#search-bar').removeClass('fixed-top')

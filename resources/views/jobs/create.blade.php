@@ -37,10 +37,26 @@
   {{-- {{ Form::label('description', 'Description', ['class' => 'font-weight-bold h5'])}}   --}}
   {{ Form::textarea('description', ' ', ['placeholder' => 'Description', 'id' =>'editor', 'class' => 'col-md-12 col-lg-10', 'style' => "", 'required' => 'required']) }}
   </div>
-  <div class="form-group">
-  {{ Form::label('salary', 'Salary', ['class' => ' font-weight-bold h5'])}}  
-  {{ Form::text('salary', '', ['placeholder' => 'Salary', 'class' => 'form-control form-control-l col-md-12 col-lg-10', ]) }}
+  
+  <div class="custom-control custom-checkbox">  
+  {{ Form::label('Salary', 'Salary', ['class' => ' font-weight-bold h5'])}}  
+  {{ Form::range('salary', '', ['placeholder' => 'Salary',
+                                'id' => 'salary_value',                              
+                                'class' => 'custom-range  col-md-12 col-lg-10', 
+                                'style' => 'width:30%;',
+                                'min' => 0,
+                                'max' => 100000,
+                                'step' => 1000,
+                                'oninput' => "salary_output.value = salary_value.value" ]) }}
+  
+  <span class="salary-output">$</span><output id="salary_output" class="salary-output"></output><span class="salary-output-1">/month Or </span>
+  
+      <input type="checkbox" name="salary" value="negotiable" class="custom-control-input col-md-12 col-lg-10" id="customCheck" >
+      <label onclick="check()" class="custom-control-label salary-output font-weight-bold h4" for="customCheck">Negotiable</label>
+ 
   </div>
+
+  
  
   
 
@@ -52,11 +68,35 @@
 <script src="https://cdn.ckeditor.com/ckeditor5/12.0.0/classic/ckeditor.js"></script>
 
 <script>
+
+
+function check() {
+    const checkbox = document.getElementById('customCheck');
+    const range = document.getElementById('salary_value');
+    const output = document.getElementById('salary_output');
+    console.log(output.value)
+    if(checkbox.checked == true) {
+      range.disabled = false;
+    } else {
+      range.disabled = true;
+      range.value = 0;
+      output.value = '';   
+    }
+}
+
+
+
+
+
+
+
+
+
+
 // import Highlight from '@ckeditor/ckeditor5-highlight/src/highlight';
 // Remove a few plugins from the default setup.
 ClassicEditor
     .create( document.querySelector( '#editor' ), {
-      
         removePlugins: [''],
         toolbar: ['Heading','|','bold', 'italic', 'link', 'bulletedList', 'numberedList', '', 'undo','redo' ]
     } )
